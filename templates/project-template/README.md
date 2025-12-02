@@ -96,8 +96,8 @@ Sensor value: 508
 ## References
 
 - [Arduino Reference](https://www.arduino.cc/reference/en/)
-- [Tutorial or guide used](URL)
-- [Datasheet](URL)
+- [Tutorial or guide used](https://example.com/tutorial)
+- [Component datasheet](https://example.com/datasheet.pdf)
 
 ## License
 

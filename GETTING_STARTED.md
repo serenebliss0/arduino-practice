@@ -274,7 +274,7 @@ avrdude: stk500_recv(): programmer is not responding
 
 ### Resources for Help
 - [Arduino Forum](https://forum.arduino.cc/)
-- [Arduino Discord](https://discord.gg/jQJFwW7)
+- Arduino Discord (search for official Arduino Discord server)
 - [r/arduino on Reddit](https://www.reddit.com/r/arduino/)
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/arduino)
 

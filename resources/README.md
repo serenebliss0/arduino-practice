@@ -112,7 +112,7 @@ Store component datasheets in this folder for quick reference:
 
 - [Arduino Forum](https://forum.arduino.cc/) - Official community forum
 - [Arduino Reddit](https://www.reddit.com/r/arduino/) - Reddit community
-- [Arduino Discord](https://discord.gg/jQJFwW7) - Real-time chat
+- Arduino Discord - Real-time chat (search for official Arduino Discord server)
 - [Stack Overflow - Arduino Tag](https://stackoverflow.com/questions/tagged/arduino)
 
 ## 📝 Quick Reference
