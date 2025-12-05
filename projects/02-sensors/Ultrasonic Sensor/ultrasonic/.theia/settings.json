@@ -1,0 +1,7 @@
+{
+  "editor.fontFamily": "Livvic, 'Courier New', monospace",
+  "editor.fontSize": 20,
+  "window.tabbar.enhancedPreview": "enhanced",
+  "debug.showInStatusBar": "always",
+  "search.lineNumbers": true
+}
