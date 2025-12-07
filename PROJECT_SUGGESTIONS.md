@@ -62,7 +62,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ### 02 - Sensors
 
 8. **Temperature Sensor (DHT11/DHT22)**
-   - Components: DHT11 or DHT22 sensor
+   - Components: DHT11 (budget, ±2°C accuracy) or DHT22 (better accuracy ±0.5°C, wider range)
    - Concepts: Digital sensor reading, libraries
    - New concept: Temperature/humidity monitoring
    - Difficulty: ⭐⭐☆☆☆
@@ -128,7 +128,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
     - Concepts: High-power switching, safety
     - New concept: Home automation basics
     - Difficulty: ⭐⭐⭐☆☆
-    - ⚠️ Safety: Test with low voltage first!
+    - ⚠️ **SAFETY WARNING**: Test with low voltage (12V DC) first! For AC voltage: turn off power at breaker, use proper insulation, never touch live wires, consider using qualified electrician for permanent installations!
 
 19. **Simple Fan Speed Controller**
     - Components: DC motor/fan, motor driver, button
@@ -171,9 +171,10 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ### 05 - Displays (Start Here!)
 
 25. **LCD 16x2 "Hello World"**
-    - Components: LCD 16x2 display (with I2C adapter)
+    - Components: LCD 16x2 display (with I2C adapter recommended - simplifies wiring to just 4 wires)
     - Concepts: LCD libraries, text display
     - New concept: Character displays
+    - Note: I2C adapter uses LiquidCrystal_I2C library; parallel connection uses LiquidCrystal library
     - Difficulty: ⭐⭐☆☆☆
 
 26. **7-Segment Counter**
@@ -309,9 +310,10 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ### 06 - Advanced Integration Projects
 
 46. **WiFi-Controlled Home Automation**
-    - Components: ESP8266/ESP32, relays, sensors
+    - Components: ESP8266/ESP32 board (replaces Arduino), relays, sensors
     - Concepts: IoT, web server, wireless control
     - New: WiFi connectivity
+    - Note: ESP8266/ESP32 are WiFi-enabled microcontrollers programmed like Arduino
     - Difficulty: ⭐⭐⭐⭐⭐
 
 47. **Data Logger with SD Card**
@@ -435,7 +437,7 @@ Tackle complex multi-component systems.
 - [ ] WS2812B LED strip
 - [ ] SD card module
 - [ ] RTC module (DS3231)
-- [ ] ESP8266 or ESP32
+- [ ] ESP8266 or ESP32 (Note: These are standalone WiFi-enabled microcontrollers that can replace Arduino for WiFi projects, or work as WiFi modules with AT commands)
 - [ ] GPS module (NEO-6M)
 
 ### Always Useful
