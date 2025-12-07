@@ -106,6 +106,15 @@ The `resources/` folder contains:
 - Circuit diagrams
 - Useful links and tutorials
 
+## 💡 Need Project Ideas?
+
+Check out **[PROJECT_SUGGESTIONS.md](PROJECT_SUGGESTIONS.md)** for 50+ project ideas organized by difficulty level and category! Includes:
+- Easy starter projects to build on what you've learned
+- Intermediate projects combining multiple components
+- Advanced IoT, robotics, and automation projects
+- Recommended learning path
+- Components shopping list
+
 ## 🔗 Useful Links
 
 - [Arduino Official Website](https://www.arduino.cc/)
