@@ -23,19 +23,19 @@ Based on your completed projects, here are **50+ new project ideas** organized b
    - Build on: Sequential blinking
    - Difficulty: ⭐⭐☆☆☆
 
-2. **PWM LED Fading**
+2. **PWM LED Fading** ✔️
    - Components: LED, resistor
    - Concepts: analogWrite(), for loops, PWM
    - Build on: Blink LED
    - Difficulty: ⭐⭐☆☆☆
 
-3. **Button Toggle LED**
+3. **Button Toggle LED** ✔️
    - Components: Button, LED, resistors
    - Concepts: State management, debouncing
    - Build on: Momentary switch
    - Difficulty: ⭐⭐☆☆☆
 
-4. **Knight Rider LED Scanner**
+4. **Knight Rider LED Scanner** ✔️
    - Components: 6-8 LEDs, resistors
    - Concepts: Arrays, loops, patterns
    - Build on: Sequential blinking
