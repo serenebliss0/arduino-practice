@@ -62,7 +62,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ### 02 - Sensors
 
 8. **Temperature Sensor (DHT11/DHT22)**
-   - Components: DHT11 (budget, ±2°C accuracy) or DHT22 (better accuracy ±0.5°C, wider range)
+   - Components: DHT11 (budget, ±2°C temp, ±5% humidity) or DHT22 (better: ±0.5°C temp, ±2-5% humidity, wider range)
    - Concepts: Digital sensor reading, libraries
    - New concept: Temperature/humidity monitoring
    - Difficulty: ⭐⭐☆☆☆
@@ -171,10 +171,10 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ### 05 - Displays (Start Here!)
 
 25. **LCD 16x2 "Hello World"**
-    - Components: LCD 16x2 display (with I2C adapter recommended - simplifies wiring to just 4 wires)
+    - Components: LCD 16x2 display (with I2C adapter recommended - reduces wiring from 6 pins to 2 pins: SDA/SCL)
     - Concepts: LCD libraries, text display
     - New concept: Character displays
-    - Note: I2C adapter uses LiquidCrystal_I2C library; parallel connection uses LiquidCrystal library
+    - Note: I2C adapter uses LiquidCrystal_I2C library and requires I2C address (use I2C scanner); parallel uses LiquidCrystal library
     - Difficulty: ⭐⭐☆☆☆
 
 26. **7-Segment Counter**
@@ -437,7 +437,7 @@ Tackle complex multi-component systems.
 - [ ] WS2812B LED strip
 - [ ] SD card module
 - [ ] RTC module (DS3231)
-- [ ] ESP8266 or ESP32 (Note: These are standalone WiFi-enabled microcontrollers that can replace Arduino for WiFi projects, or work as WiFi modules with AT commands)
+- [ ] ESP8266 or ESP32 (Note: These are standalone WiFi-enabled microcontrollers programmed using Arduino IDE and libraries, making them Arduino-compatible alternatives for WiFi projects)
 - [ ] GPS module (NEO-6M)
 
 ### Always Useful
