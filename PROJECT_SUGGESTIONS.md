@@ -17,7 +17,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 ## 🟢 Easy Projects (Next Steps)
 
 ### 01 - Basics
-1. **Traffic Light System**
+1. **Traffic Light System** ✔️
    - Components: 3 LEDs (Red, Yellow, Green), Resistors
    - Concepts: State machines, timing with millis()
    - Build on: Sequential blinking
