@@ -176,7 +176,7 @@ Common values: 220Ω, 1kΩ, 10kΩ, 100kΩ, 1MΩ
 ### Online Simulators
 - **Falstad Circuit Simulator**: https://falstad.com/circuit/
 - **CircuitLab**: https://www.circuitlab.com/
-- **LTspice**: Free SPICE simulator by Analog Devices
+- **LTspice**: https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html - Free SPICE simulator by Analog Devices
 
 ### Reference Websites
 - **All About Circuits**: https://www.allaboutcircuits.com/
