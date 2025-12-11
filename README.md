@@ -1,6 +1,6 @@
-# Arduino Practice Repository 🤖
+# Arduino & Electronics Practice Repository 🤖⚡
 
-Welcome to my Arduino learning journey! This repository is organized to store all my Arduino projects as I learn and experiment with various components and concepts.
+Welcome to my electronics learning journey! This repository contains both **Arduino microcontroller projects** and **pure electronic circuits** (without microcontrollers). Whether you're interested in programming or hardware design, you'll find projects here to expand your skills.
 
 ## 📁 Repository Structure
 
@@ -13,6 +13,11 @@ arduino-practice/
 │   ├── 04-communication/  # Serial, I2C, SPI, Bluetooth, WiFi projects
 │   ├── 05-displays/       # LCD, LED matrix, OLED projects
 │   └── 06-advanced/       # Complex projects combining multiple concepts
+├── circuits/              # Pure electronic circuits (no microcontroller)
+│   ├── 01-beginner/       # Basic circuits with ICs and transistors
+│   ├── 02-intermediate/   # Multi-IC designs and complex logic
+│   ├── 03-advanced/       # Advanced analog and digital circuits
+│   └── schematics/        # Reference designs and datasheets
 ├── resources/             # Helpful resources, datasheets, and references
 └── templates/             # Project templates and boilerplate code
 ```
@@ -82,6 +87,68 @@ Complex integrated projects:
 - Robotics
 - Multi-sensor systems
 
+---
+
+## ⚡ Electronic Circuits (No Microcontroller)
+
+Learn electronics fundamentals by building circuits using ICs, transistors, and discrete components - **no programming required!** Perfect for understanding how hardware works at a deeper level.
+
+### What's Included:
+- **26+ Circuit Projects**: From beginner to advanced
+- **Practical Learning**: 555 timers, op-amps, logic gates, counters, and more
+- **Real Applications**: Amplifiers, power supplies, oscillators, sensors
+- **Hardware Focus**: Pure analog and digital circuit design
+
+### Why Learn Circuit Design?
+- 🔹 **Understand Electronics Deeply**: See how components work together
+- 🔹 **No Programming Needed**: Focus purely on hardware
+- 🔹 **Complement Arduino Skills**: Better understand what Arduino does internally
+- 🔹 **Build Useful Tools**: Power supplies, testers, amplifiers
+- 🔹 **Lower Power**: Many circuits are more efficient than microcontrollers
+
+### Circuit Categories:
+
+#### Beginner (7 Projects)
+- 555 Timer LED Blinker
+- Dark-Activated LED (transistor switch)
+- LED Chaser/Sequencer (4017 IC)
+- Simple Audio Amplifier (LM386)
+- Touch Switch
+- And more!
+
+#### Intermediate (9 Projects)
+- SR Latch (Set-Reset Flip-Flop) ✅ *Already built!*
+- Clap Switch (sound-activated)
+- Adjustable Power Supply (LM317)
+- Infrared Proximity Sensor
+- Motor Speed Controller (PWM)
+- Water Level Indicator
+- And more!
+
+#### Advanced (10 Projects)
+- Function Generator (sine, square, triangle waves)
+- Security Alarm System
+- Digital Dice with 7-segment display
+- Traffic Light Controller
+- Stepper Motor Driver
+- Temperature-Controlled Fan
+- And more!
+
+### 📚 Full Documentation
+For complete project descriptions, component lists, and learning resources:
+- **[CIRCUITS.md](CIRCUITS.md)** - Comprehensive guide to all circuit projects
+- **[circuits/README.md](circuits/README.md)** - Quick navigation and tips
+
+### Getting Started with Circuits
+1. Start with the 555 Timer LED Blinker (beginner)
+2. Build the SR Latch to understand digital memory
+3. Try an audio amplifier or LED chaser
+4. Gradually move to intermediate and advanced projects
+
+**Essential Component**: Get a **multimeter** if you don't have one - it's absolutely crucial for circuit building and debugging!
+
+---
+
 ## 📝 How to Add a New Project
 
 1. Choose the appropriate category folder
@@ -108,12 +175,21 @@ The `resources/` folder contains:
 
 ## 💡 Need Project Ideas?
 
-Check out **[PROJECT_SUGGESTIONS.md](PROJECT_SUGGESTIONS.md)** for 50+ project ideas organized by difficulty level and category! Includes:
+### Arduino Projects
+Check out **[PROJECT_SUGGESTIONS.md](PROJECT_SUGGESTIONS.md)** for 50+ Arduino project ideas organized by difficulty level and category! Includes:
 - Easy starter projects to build on what you've learned
 - Intermediate projects combining multiple components
 - Advanced IoT, robotics, and automation projects
 - Recommended learning path
 - Components shopping list
+
+### Circuit Projects (No Microcontroller)
+Check out **[CIRCUITS.md](CIRCUITS.md)** for 26+ pure electronics projects! Includes:
+- Beginner circuits with 555 timers and basic ICs
+- Intermediate circuits with op-amps and logic gates
+- Advanced circuits with multiple ICs and complex designs
+- Essential components guide
+- Circuit design tips and learning resources
 
 ## 🔗 Useful Links
 
