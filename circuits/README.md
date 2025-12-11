@@ -6,24 +6,54 @@ This directory contains electronic circuit projects that **don't require Arduino
 
 ```
 circuits/
-├── README.md                  # This file - navigation and overview
-├── 01-beginner/              # Basic circuits for learning fundamentals
-├── 02-intermediate/          # Circuits using ICs and more complex designs
-├── 03-advanced/              # Advanced multi-IC and complex circuits
-├── schematics/               # General schematics and reference designs
-├── LED-Blinker.fzz          # 555 timer LED blinker circuit
-├── LED-Blinker_schem.pdf    # Schematic PDF for LED blinker
-└── SR-Latch.fzz             # SR Latch flip-flop circuit
+├── README.md                    # This file - navigation and overview
+├── 01-beginner/                 # Basic circuits (7 projects)
+│   ├── 01-555-timer-led-blinker/     ✅ Has Fritzing file & schematic
+│   ├── 02-simple-led-flashlight/
+│   ├── 03-dark-activated-led/
+│   ├── 04-push-button-debouncing/
+│   ├── 05-simple-audio-amplifier/
+│   ├── 06-led-chaser-4017/
+│   └── 07-touch-switch/
+├── 02-intermediate/             # Intermediate circuits (8 projects)
+│   ├── 08-sr-latch/                  ✅ Has Fritzing file
+│   ├── 09-clap-switch/
+│   ├── 10-automatic-emergency-light/
+│   ├── 11-ir-proximity-sensor/
+│   ├── 12-adjustable-power-supply/
+│   ├── 13-motor-speed-controller/
+│   ├── 14-water-level-indicator/
+│   └── 15-bistable-relay/
+├── 03-advanced/                 # Advanced circuits (11 projects)
+│   ├── 16-digital-dice/
+│   ├── 17-security-alarm-system/
+│   ├── 18-traffic-light-controller/
+│   ├── 19-function-generator/
+│   ├── 20-dual-power-supply/
+│   ├── 21-temperature-controlled-fan/
+│   ├── 22-stepper-motor-driver/
+│   ├── 23-digital-logic-probe/
+│   ├── 24-analog-volt-ammeter/
+│   ├── 25-pwm-motor-controller/
+│   └── 26-binary-counter-7segment/
+└── schematics/                  # General schematics and reference designs
 ```
 
 ## 🎯 What's in This Section?
 
-### Existing Circuits
-- **LED-Blinker.fzz**: 555 timer-based LED blinker circuit
-- **SR-Latch.fzz**: Set-Reset latch (flip-flop) using logic gates
+### Project Organization
+All 26 circuit projects from CIRCUITS.md are now organized into folders by difficulty level! Each project folder contains:
+- **README.md**: Full documentation, theory, components, building instructions
+- **Circuit files**: Fritzing (.fzz), schematics, and photos (as available)
 
-### Coming Soon
-As you build more projects, organize them into these categories:
+### Current Status
+- ✅ **All 26 project folders created** with documentation
+- ✅ **Beginner projects (1-7)**: Complete READMEs with detailed instructions
+- ✅ **Intermediate projects (8-9)**: Detailed READMEs, others have basic structure
+- ✅ **Advanced projects (16-26)**: Basic structure with references to CIRCUITS.md
+- ✅ **Existing circuits moved** to appropriate folders (555 Timer, SR Latch)
+
+### Projects by Category
 
 #### 01-Beginner/
 - Basic circuits using LEDs, resistors, and simple ICs
