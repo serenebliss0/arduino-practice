@@ -67,4 +67,4 @@ GND |4   5| OUT
 **Circuit Status**: 📋 Awaiting schematic and photos
 **Last Updated**: December 2024
 
-Rock on! 🎸🔊
+Amplify your signals! 🔊⚡
