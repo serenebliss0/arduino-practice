@@ -8,7 +8,6 @@
  * - Arduino board: UNO Rev 3
  * - 1 RGB LED
  * - 6 220-ohm resistors (one for each led and button)
- * - 1 220-ohm resistor (if using a 9v battery)
  * - 3 momentary switches
  * - 1 9v battery (optional)
  * 
