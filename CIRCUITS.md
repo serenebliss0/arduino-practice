@@ -25,7 +25,7 @@ circuits/
 
 ## 🟢 Beginner Projects (Learn the Basics)
 
-### 1. **555 Timer LED Blinker** ⭐⭐☆☆☆
+### 1. **555 Timer LED Blinker** ⭐⭐☆☆☆  ✔️
 **What you'll learn**: Basic timer ICs, astable mode operation
 
 **Components**:
