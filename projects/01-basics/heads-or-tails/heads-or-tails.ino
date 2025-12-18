@@ -65,6 +65,7 @@ void loop()
     Serial.print(headsCounter);
     Serial.print(" and tails = ");
     Serial.print(tailsCounter);
+    Serial.println();
   }
   delay(PAUSE);
 }
