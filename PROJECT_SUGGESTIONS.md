@@ -41,7 +41,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
    - Build on: Sequential blinking
    - Difficulty: ⭐⭐☆☆☆
 
-5. **RGB LED Color Mixer**
+5. **RGB LED Color Mixer** ✔️
    - Components: RGB LED (common cathode/anode), 3 potentiometers
    - Concepts: Analog read, PWM, color theory
    - Build on: Potentiometer
