@@ -51,4 +51,6 @@ void loop()
   analogWrite(REDPIN, red);
   analogWrite(GREENPIN, green);
   analogWrite(BLUEPIN, blue);
+
+  Serial.println(red);
 }
