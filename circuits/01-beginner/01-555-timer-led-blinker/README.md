@@ -167,7 +167,7 @@ Once you've mastered this circuit, try:
 
 ---
 
-**Circuit Status**: 📋 Awaiting schematic and photos
-**Last Updated**: December 2024
+**Circuit Status**: Verified and works as expected.
+**Last Updated**: December 2025
 
 Happy blinking! 🔴💡
