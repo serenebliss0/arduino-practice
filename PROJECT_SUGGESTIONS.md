@@ -14,7 +14,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 
 ---
 
-## 🟢 Easy Projects (Next Steps)
+## 🟢 Easy Projects (Next Steps) ✔️
 
 ### 01 - Basics
 1. **Traffic Light System** ✔️
