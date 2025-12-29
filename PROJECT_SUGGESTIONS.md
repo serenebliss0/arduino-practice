@@ -14,7 +14,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 
 ---
 
-## 🟢 Easy Projects (Next Steps)
+## 🟢 Easy Projects (Next Steps) ✔️
 
 ### 01 - Basics
 1. **Traffic Light System** ✔️
@@ -47,13 +47,13 @@ Based on your completed projects, here are **50+ new project ideas** organized b
    - Build on: Potentiometer
    - Difficulty: ⭐⭐☆☆☆
 
-6. **Multi-Button Control**
+6. **Multi-Button Control** ✔️
    - Components: 3-4 buttons, LEDs
    - Concepts: Multiple inputs, switch statements
    - Build on: Momentary switch
    - Difficulty: ⭐⭐☆☆☆
 
-7. **Reaction Time Game**
+7. **Reaction Time Game** ✔️
    - Components: Button, LED, buzzer
    - Concepts: Random numbers, timing, user input
    - Build on: Momentary switch, blink LED
