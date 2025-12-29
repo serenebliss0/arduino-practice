@@ -31,6 +31,7 @@
 
 //addr of my lcd was 0x27 (some might be 0x3F), 16 columns, 2 rows
 LiquidCrystal_I2C lcd(0x27, 16, 2);
+// if you're unsure of your i2c address, check `02- sensors/ i2c-scanner`for help
 
 #define outPin 2
 
