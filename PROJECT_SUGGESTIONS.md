@@ -61,7 +61,7 @@ Based on your completed projects, here are **50+ new project ideas** organized b
 
 ### 02 - Sensors
 
-8. **Temperature Sensor (DHT11/DHT22)**
+8. **Temperature Sensor (DHT11/DHT22)** ✔️
    - Components: DHT11 (budget, ±2°C temp, ±5% humidity) or DHT22 (better: ±0.5°C temp, ±2-5% humidity, wider range)
    - Concepts: Digital sensor reading, libraries
    - New concept: Temperature/humidity monitoring
