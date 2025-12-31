@@ -46,7 +46,7 @@ The key is **positive feedback**:
 Each pole has 3 terminals:
 - **COM** (Common): The moving contact
 - **NO** (Normally Open): Connected to COM when relay energized
-- **NC** (Normally Closed**: Connected to COM when relay de-energized
+- **NC** (Normally Closed): Connected to COM when relay de-energized
 
 ### Circuit Operation
 
