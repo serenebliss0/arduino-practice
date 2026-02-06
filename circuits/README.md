@@ -8,15 +8,15 @@ This directory contains electronic circuit projects that **don't require Arduino
 circuits/
 ├── README.md                    # This file - navigation and overview
 ├── 01-beginner/                 # Basic circuits (7 projects)
-│   ├── 01-555-timer-led-blinker/     ✅ Has Fritzing file & schematic
+│   ├── 01-555-timer-led-blinker/     ✅
 │   ├── 02-simple-led-flashlight/
-│   ├── 03-dark-activated-led/
-│   ├── 04-push-button-debouncing/
-│   ├── 05-simple-audio-amplifier/
+│   ├── 03-dark-activated-led/        ✅
+│   ├── 04-push-button-debouncing/    ✅
+│   ├── 05-simple-audio-amplifier/    ✅
 │   ├── 06-led-chaser-4017/
 │   └── 07-touch-switch/
 ├── 02-intermediate/             # Intermediate circuits (8 projects)
-│   ├── 08-sr-latch/                  ✅ Has Fritzing file
+│   ├── 08-sr-latch/                 
 │   ├── 09-clap-switch/
 │   ├── 10-automatic-emergency-light/
 │   ├── 11-ir-proximity-sensor/
