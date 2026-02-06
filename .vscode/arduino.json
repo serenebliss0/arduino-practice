@@ -1,3 +1,13 @@
 {
-    "port": "COM9"
+    "board": "arduino:avr:uno",
+    "port": "COM5",
+    "monitorPortSettings": {
+        "port": "COM5",
+        "baudRate": 115200,
+        "lineEnding": "\r\n",
+        "dataBits": 8,
+        "parity": "none",
+        "stopBits": "one"
+    },
+    "optimize_for_debug": false
 }
