@@ -1612,4 +1612,4 @@ You've built a sophisticated internet-connected clock that maintains accurate ti
 
 **Share Your Build**: Post your project with #ESP32NTPClock #IoTTime
 
-Next up: **Project 8 - MQTT Smart Home** where we'll add real-time communication! 🏠✨
+Want more ESP32 projects? Check out **Project 4: MQTT Sensor Network** for real-time IoT communication! 🏠✨
