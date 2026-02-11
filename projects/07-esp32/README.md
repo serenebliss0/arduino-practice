@@ -271,10 +271,8 @@ Each project folder contains:
 
 ```
 project-name/
-├── README.md              # Detailed project documentation
-├── project-name.ino       # Main Arduino sketch
-├── libraries/             # Required custom libraries (if any)
-├── schematics/            # Circuit diagrams
+├── README.md              # Detailed project documentation with complete code examples
+├── schematics/            # Circuit diagrams (if applicable)
 │   ├── fritzing.fzz      # Fritzing file
 │   └── schematic.png     # Circuit diagram image
 ├── web/                   # Web interface files (if applicable)
@@ -287,6 +285,8 @@ project-name/
     ├── troubleshooting.md
     └── customization.md
 ```
+
+**Note**: All Arduino code is provided within the README documentation files. Simply copy the code examples into your Arduino IDE to get started!
 
 ## 🛠️ Before You Start
 
