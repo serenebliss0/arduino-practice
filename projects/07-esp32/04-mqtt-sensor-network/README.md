@@ -333,28 +333,86 @@ Message arrived [home/sensor01/buzzer]: beep
 
 ### MQTT Basics
 
+**What is MQTT?**
+
+MQTT (Message Queuing Telemetry Transport) is a lightweight, publish-subscribe network protocol designed for IoT devices with limited resources. Created by IBM in 1999, it has become the de facto standard for IoT communication due to its efficiency, reliability, and simplicity.
+
+**Why MQTT for IoT?**
+- **Lightweight**: Minimal packet overhead (as small as 2 bytes)
+- **Efficient**: Low bandwidth consumption, ideal for mobile networks
+- **Reliable**: Three levels of Quality of Service (QoS)
+- **Bi-directional**: Both publish and subscribe from the same device
+- **Persistent sessions**: Resume communication after disconnection
+- **Last Will and Testament**: Automatic notification when device goes offline
+
 **Publish-Subscribe Pattern:**
 - **Publishers** send messages to topics
 - **Subscribers** receive messages from topics they're interested in
 - **Broker** routes messages between publishers and subscribers
+- **Topics** organize messages hierarchically (e.g., `home/livingroom/temperature`)
 
 ```
 Publisher (ESP32)  →  [Topic: home/temp]  →  Broker  →  Subscriber (App)
 ```
 
+**MQTT vs HTTP:**
+- MQTT uses persistent connections (HTTP creates new connection per request)
+- MQTT is event-driven (HTTP is request/response)
+- MQTT has smaller message overhead (2-20 bytes vs 100+ bytes for HTTP)
+- MQTT supports QoS levels (HTTP doesn't)
+- MQTT is ideal for many-to-many communication
+
+**Topic Hierarchy Best Practices:**
+```
+home/                          # Root level
+  ├── livingroom/              # Location
+  │   ├── sensor01/            # Device
+  │   │   ├── temperature      # Sensor type
+  │   │   ├── humidity
+  │   │   └── motion
+  │   └── lights/              # Another device
+  │       ├── power
+  │       └── brightness
+  └── bedroom/
+      └── sensor02/
+          ├── temperature
+          └── humidity
+```
+
 ### Quality of Service (QoS) Levels
 
-**QoS 0** - At most once (fire and forget):
+MQTT provides three levels of Quality of Service to balance between reliability and performance:
+
+**QoS 0 - At Most Once (Fire and Forget):**
+- Message sent once, no acknowledgment required
+- Fastest but least reliable
+- Message may be lost if connection drops
+- Best for: Non-critical data, high-frequency updates (temperature every second)
 ```cpp
 mqttClient.publish(topic, message, false);  // No guarantee
 ```
 
-**QoS 1** - At least once (acknowledged):
+**QoS 1 - At Least Once (Acknowledged Delivery):**
+- Message sent and acknowledgment (PUBACK) required
+- May receive duplicates if ACK is lost
+- Guaranteed delivery but not guaranteed uniqueness
+- Best for: Important data that can tolerate duplicates (motion alerts)
 ```cpp
 mqttClient.publish(topic, message, true);  // Guaranteed delivery
 ```
 
-**QoS 2** - Exactly once (four-way handshake) - not supported by PubSubClient
+**QoS 2 - Exactly Once (Four-Way Handshake):**
+- Most reliable but slowest
+- Four-step handshake: PUBLISH → PUBREC → PUBREL → PUBCOMP
+- No duplicates, guaranteed delivery
+- Best for: Critical commands (door unlock, payment transactions)
+- **Note**: Not supported by PubSubClient library
+
+**Choosing the Right QoS:**
+- Temperature/humidity readings: QoS 0 (frequent, non-critical)
+- Motion detection alerts: QoS 1 (important but duplicates OK)
+- Control commands: QoS 1 or higher (must be received)
+- Financial transactions: QoS 2 (if supported)
 
 ### Key Functions Explained
 
@@ -398,6 +456,26 @@ if (!mqttClient.connected()) {
   mqttClient.loop();  // Must call regularly to process messages
 }
 ```
+
+**Why `mqttClient.loop()` is Critical:**
+- Processes incoming messages
+- Maintains connection with broker
+- Sends keep-alive packets
+- Must be called frequently (at least every few seconds)
+- Should be called in every iteration of `loop()`
+
+**Connection State Management:**
+The ESP32 maintains a state machine for MQTT connection:
+1. **Disconnected**: Initial state, no connection attempt
+2. **Connecting**: Attempting to connect to broker
+3. **Connected**: Active connection, can publish/subscribe
+4. **Disconnecting**: Gracefully closing connection
+
+**Reconnection Strategy:**
+- Exponential backoff: Increase delay between retries
+- Avoid rapid reconnection attempts (can overload broker)
+- Resubscribe to all topics after reconnection
+- Publish "online" status message upon reconnection
 
 ### DHT22 Sensor Reading
 
