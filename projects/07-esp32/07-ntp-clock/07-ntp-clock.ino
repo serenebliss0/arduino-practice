@@ -431,17 +431,24 @@ void printDetailedInfo() {
   Serial.println("║        Time Information               ║");
   Serial.println("╠═══════════════════════════════════════╣");
   
-  Serial.print("║ Current Time: ");
-  printTime();
-  for (int i = 0; i < 21 - strlen("Current Time: "); i++) Serial.print(" ");
-  Serial.println("║");
+  // Format time string first to get length
+  char timeStr[30];
+  if (USE_24_HOUR_FORMAT) {
+    sprintf(timeStr, "%02d:%02d:%02d", timeinfo.tm_hour, timeinfo.tm_min, timeinfo.tm_sec);
+  } else {
+    int hour12 = timeinfo.tm_hour % 12;
+    if (hour12 == 0) hour12 = 12;
+    const char* ampm = (timeinfo.tm_hour >= 12) ? "PM" : "AM";
+    sprintf(timeStr, "%2d:%02d:%02d %s", hour12, timeinfo.tm_min, timeinfo.tm_sec, ampm);
+  }
+  Serial.printf("║ Current Time: %-23s ║\n", timeStr);
   
-  Serial.print("║ Date: ");
-  printDate();
-  Serial.print(" ");
-  printDayOfWeek();
-  for (int i = 0; i < 22 - (strlen(" ") + 10); i++) Serial.print(" ");
-  Serial.println("║");
+  // Format date and day of week
+  char dateStr[50];
+  const char* days[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+  sprintf(dateStr, "%04d-%02d-%02d %s", 
+          timeinfo.tm_year + 1900, timeinfo.tm_mon + 1, timeinfo.tm_mday, days[timeinfo.tm_wday]);
+  Serial.printf("║ Date: %-32s ║\n", dateStr);
   
   Serial.printf("║ Day of Year: %-25d ║\n", getDayOfYear());
   Serial.printf("║ Week Number: %-25d ║\n", getWeekNumber());
