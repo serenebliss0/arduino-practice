@@ -13,6 +13,7 @@ arduino-practice/
 │   ├── 04-communication/  # Serial, I2C, SPI, Bluetooth, WiFi projects
 │   ├── 05-displays/       # LCD, LED matrix, OLED projects
 │   └── 06-advanced/       # Complex projects combining multiple concepts
+|   └── 07-esp32           # ESP32 Centric projects
 ├── circuits/              # Pure electronic circuits (no microcontroller)
 │   ├── 01-beginner/       # Basic circuits with ICs and transistors
 │   ├── 02-intermediate/   # Multi-IC designs and complex logic
@@ -86,6 +87,15 @@ Complex integrated projects:
 - Home automation
 - Robotics
 - Multi-sensor systems
+
+### 07- ESP32
+
+ESP32 Centric projects:
+ - Web Servers
+ - Bluetooth Low Energy (LE)
+ - WiFi Scanners
+ - More IoT projects
+ - OTA Updates
 
 ---
 
