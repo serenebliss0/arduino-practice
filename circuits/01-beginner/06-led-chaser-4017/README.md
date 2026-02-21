@@ -57,12 +57,41 @@ A running light display where LEDs light up one after another in sequence, creat
      +------+
 ```
 
+555 Timer IC (8-pin DIP):
+```
+    +--U--+
+GND |1   8| VCC (+9V)
+TRG |2   7| DIS
+OUT |3   6| THR
+RST |4   5| CTL
+    +-----+
+```
+
 ## Building Instructions
 
 ### Step 1: Build 555 Timer Clock
 Follow the 555 astable configuration (Project #1):
-- R1 = 1kΩ, R2 = 10kΩ, C = 10µF
-- This gives ~7Hz clock rate (visible chasing)
+- R1 = 4.7kΩ, R2 = 4.7kΩ, C = 10µF
+- This gives ~10Hz clock rate (visible chasing)
+
+- Pin 1 → GND
+- Pin 8 → VCC 
+- Pin 4 → VCC ← VERY IMPORTANT (Reset pin must not float)
+
+1. Connect Pin 2 and Pin 6 together
+2. From Pin 2/6 → connect a capacitor to GND
+3. From VCC → Pin 7 put Resistor 1 (R1)
+4. From Pin 7 → Pin 2/6 put Resistor 2 (R2)
+That forms the charge/discharge loop.
+
+- Pin 3 → Output to CD4017 CLK (Pin 14)
+
+
+### Stability Fixes (Do These)
+
+- 0.1µF capacitor between Pin 8 and Pin 1
+- 10nF (0.01µF) capacitor from Pin 5 → GND
+- Pin 5 is control voltage. If you leave it floating, timing gets noisy.
 
 ### Step 2: Setup CD4017
 1. Power: Pin 16 to +9V, Pin 8 to GND
@@ -74,6 +103,12 @@ Follow the 555 astable configuration (Project #1):
 Connect 10 LEDs to outputs Q0-Q9:
 - Each LED anode → Output pin (Q0-Q9)
 - Each LED cathode → 220Ω resistor → GND
+
+### (If you want to do create the bistable mode)
+Connect 10 other LEDs to outputs Q9-Q0:
+- Each LED anode → Output pin (Q9-Q0)
+- Each LED cathode → 220Ω resistor → GND
+- Reverse the order the pins are connected to the CD4017 (Q9->Q0 instead of Q0->Q9)
 
 ### Step 4: Test
 Power on and watch the LEDs chase!
@@ -89,9 +124,6 @@ Power on and watch the LEDs chase!
 Connect RESET (pin 15) to desired output to reset early:
 - Q3 → Reset: Creates 3-LED chaser
 - Q5 → Reset: Creates 5-LED chaser
-
-### Bidirectional Chase
-Use two 4017s counting in opposite directions!
 
 ### Add Sound
 Connect piezo buzzer to each output through different value resistors for musical tones
@@ -116,7 +148,7 @@ Connect piezo buzzer to each output through different value resistors for musica
 
 ---
 
-**Circuit Status**: 📋 Awaiting schematic and photos
-**Last Updated**: December 2024
+**Circuit Status**: 📋 Complete ✔️
+**Last Updated**: February 2026
 
 Chase those lights! 💫⚡
