@@ -81,3 +81,6 @@ fp-info-cache
 # ---------------------------
 ehthumbs.db
 desktop.ini
+
+*.html
+
