@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("working_with_esp32")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+abd835838aa51b888738cf61c96a14628c94bd65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+51b73c39eefbbed96c519289b24d9681dd4b0f8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("working_with_esp32")]
 [assembly: System.Reflection.AssemblyTitleAttribute("working_with_esp32")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

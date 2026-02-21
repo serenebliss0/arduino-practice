@@ -1,35 +1,63 @@
-# Prerequisites
-*.d
+# ---------------------------
+# General
+# ---------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
 
-# Compiled Object files
-*.slo
-*.lo
+# ---------------------------
+# VS Code
+# ---------------------------
+.vscode/
+!.vscode/extensions.json
+
+# ---------------------------
+# PlatformIO
+# ---------------------------
+.pio/
+.pioenvs/
+.piolibdeps/
+platformio.ini.lock
+
+# ---------------------------
+# Arduino
+# ---------------------------
+*.ino.cpp
+
+# ---------------------------
+# Build / Output folders
+# ---------------------------
+build/
+dist/
+Debug/
+Release/
+
+# ---------------------------
+# C/C++ Compiled Files
+# ---------------------------
+*.d
 *.o
 *.obj
-
-# Precompiled Headers
+*.slo
+*.lo
 *.gch
 *.pch
-
-# Linker files
 *.ilk
-
-# Debugger Files
 *.pdb
+*.dwo
 
-# Compiled Dynamic libraries
+# Dynamic Libraries
 *.so
 *.dylib
 *.dll
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
+# Static Libraries
 *.a
+*.la
+*.lai
 *.lib
 
 # Executables
@@ -37,8 +65,19 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+# ---------------------------
+# KiCad
+# ---------------------------
+*.kicad_prl
+*.kicad_pro-bak
+*.kicad_sch-bak
+*-backup.kicad_sch
+*-backup.kicad_pcb
+fp-info-cache
+*.autosave
 
-*.vscode/
-.vscode/arduino.json
+# ---------------------------
+# OS Generated Files
+# ---------------------------
+ehthumbs.db
+desktop.ini
