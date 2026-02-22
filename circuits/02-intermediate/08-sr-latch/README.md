@@ -22,21 +22,38 @@
 ## Circuit Description
 Build a fundamental memory element - the SR Latch! This circuit "remembers" which button was pressed last and holds that state. It's the building block of all computer memory and a perfect introduction to digital logic and memory circuits.
 
-## How It Works
-- Press **SET** button → Output goes HIGH (LED on) and **stays on**
-- Press **RESET** button → Output goes LOW (LED off) and **stays off**  
-- The circuit maintains its state even after you release the buttons
-- This is **digital memory** in its simplest form!
+## How It Works:
+
+The SR latch is the simplest form of digital memory.
+It remembers the last button pressed:
+
+* Press **SET** → Output turns ON and stays ON
+* Press **RESET** → Output turns OFF and stays OFF
+
+Even after you release the button, the state remains.
+
+The circuit has **two NAND gates connected to each other**.
+
+Each gate feeds back into the other.
+
+This feedback creates two stable states:
+
+* Q = HIGH, Q̄ = LOW
+* Q = LOW, Q̄ = HIGH
+
+Once it enters one of those states, it stays there until forced to change.
+
+---
 
 ## Theory of Operation
 
 ### SR Latch Truth Table
-| S | R | Q | Q̄ | State |
-|---|---|---|---|-------|
-| 0 | 0 | Q | Q̄ | Hold (no change) |
-| 1 | 0 | 1 | 0 | Set |
-| 0 | 1 | 0 | 1 | Reset |
-| 1 | 1 | X | X | Invalid (avoid!) |
+| S | R | Q | Q̄ | Meaning          |
+| - | - | - | -- | ---------------- |
+| 1 | 1 | Q | Q̄ | Hold (no change) |
+| 0 | 1 | 1 | 0  | Set              |
+| 1 | 0 | 0 | 1  | Reset            |
+| 0 | 0 | X | X  | Invalid (avoid)  |
 
 ### Using NAND Gates
 Two cross-coupled NAND gates create the bistable latch:
@@ -44,23 +61,77 @@ Two cross-coupled NAND gates create the bistable latch:
 - Output of gate 2 feeds input of gate 1
 - This positive feedback creates two stable states
 
+## CD4011 Pinout Diagram
+```
+        +-----U-----+
+  1A  1 |•        14| VDD (+5V)
+  1B  2 |         13| 4B
+  1Y  3 |         12| 4A
+  2Y  4 |  CD4011 11| 4Y
+  2A  5 |         10| 3Y
+  2B  6 |          9| 3A
+  GND 7 |__________8| 3B
+```
+---
+
 ## Building Instructions
 
 ### Using CD4011 (NAND Gates)
-1. Power: Pin 14 to +5V, Pin 7 to GND
-2. **Gate 1** (pins 1, 2, 3):
-   - Pin 1: SET button (active LOW with pull-up)
-   - Pin 2: Connect to Gate 2 output (pin 4)
-   - Pin 3: Q output → LED 1
-3. **Gate 2** (pins 5, 6, 4):
-   - Pin 5: RESET button (active LOW with pull-up)
-   - Pin 6: Connect to Gate 1 output (pin 3)
-   - Pin 4: Q̄ output → LED 2
 
-### Button Configuration
-- One side of button to input pin
-- Other side to GND
-- 10kΩ pull-up resistor from input pin to +5V
+## 1️⃣ Power Connections
+
+* Pin 14 → +5V
+* Pin 7 → GND
+
+---
+
+## 2️⃣ Gate Wiring
+
+### Gate 1 (SET side)
+
+* Pin 1 → SET input
+* Pin 2 → Connect to Pin 4 (output of Gate 2)
+* Pin 3 → Q output → LED + 220Ω → GND
+
+---
+
+### Gate 2 (RESET side)
+
+* Pin 5 → RESET input
+* Pin 6 → Connect to Pin 3 (output of Gate 1)
+* Pin 4 → Q̄ output → LED + 220Ω → GND
+
+---
+
+## 3️⃣ Button Wiring (Important)
+
+Each button needs a pull-up resistor.
+
+For BOTH SET and RESET:
+
+```
++5V
+  |
+ [10k]
+  |
+  +-----> To input pin (Pin 1 or Pin 5)
+  |
+ (button)
+  |
+ GND
+```
+* Connect one pin of the button to the 10k resistor
+* Connect the other end of the resistor to 5V
+* Connect the same pin to pin 1 (for set) or pin 2 (for reset)
+
+Explanation:
+
+* Not pressed → input = HIGH
+* Pressed → input = LOW
+
+That LOW triggers the NAND latch.
+
+Do NOT use pull-down resistors here.
 
 ## Testing & Troubleshooting
 
@@ -96,6 +167,13 @@ Two cross-coupled NAND gates create the bistable latch:
 - Toggle switches
 - Foundation of all digital memory!
 
+## Project Ideas:
+
+* Build a toggle switch using an SR latch
+* Create a 4-bit register using 4 latches
+* Combine with a clock to explore flip-flops
+
+
 ## Next Steps
 - Digital Dice (Project #16) - Uses latches
 - Bistable Relay (Project #15) - Mechanical memory
@@ -103,7 +181,6 @@ Two cross-coupled NAND gates create the bistable latch:
 
 ---
 
-**Circuit Status**: ✅ Fritzing file exists (SR-Latch.fzz)
-**Last Updated**: December 2024
+**Circuit Status**: ✅ Completed
 
-Remember everything! 🧠💾
+**Last Updated**: February 2026
