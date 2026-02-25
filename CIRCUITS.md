@@ -297,6 +297,64 @@ circuits/
 
 ---
 
+### 27. **Electronic Metronome** ⭐⭐⭐☆☆
+**What you'll learn**: Astable 555 in audio range, BPM control, audio output
+
+**Components**:
+- 555 Timer IC
+- 8Ω speaker or piezo buzzer
+- Potentiometer (100kΩ for tempo control)
+- Resistors (1kΩ, 220Ω)
+- Capacitors (10µF, 100nF)
+- LED (beat indicator)
+- 9V battery
+
+**Description**: An adjustable-tempo metronome covering ~40–208 BPM. The 555 timer in astable mode produces audio pulses; a potentiometer varies the timing capacitor's charge rate to change tempo. An LED flashes in sync with each click. Perfect for music practice and understanding how the 555 generates audio-range signals.
+
+**BPM Formula**: `BPM = 60 / ((R1 + 2×R2) × C × 1.44)` where R2 is the pot resistance
+
+**Key Concepts**: Astable 555, audio-range oscillators, BPM/Hz conversion, tempo control
+
+---
+
+### 28. **Capacitance Tester** ⭐⭐⭐☆☆
+**What you'll learn**: 555 monostable mode, pulse-width measurement, capacitance calculation
+
+**Components**:
+- 555 Timer IC (monostable mode)
+- CD4017 Decade Counter IC
+- LEDs (10 for visual bar scale)
+- Resistors (10kΩ timing, 220Ω LED)
+- Test probes (for unknown capacitor)
+- 9V battery
+
+**Description**: Identify unknown capacitors without a meter! The 555 in monostable mode outputs a pulse whose width equals 1.1 × R × C. With a fixed known resistor, pulse width indicates the unknown capacitance. The CD4017 decodes pulse length into one of ten LEDs, giving a visual range indication from 100nF to 100µF.
+
+**Capacitance Formula**: `C = t_pulse / (1.1 × R)` where t_pulse is measured pulse width
+
+**Key Concepts**: 555 monostable, pulse-width measurement, capacitance-to-time conversion, decade counter display
+
+---
+
+### 29. **LED Bar Graph Voltmeter** ⭐⭐⭐☆☆
+**What you'll learn**: Op-amp comparators, reference voltage ladders, voltage measurement
+
+**Components**:
+- LM324 Quad Op-Amp IC
+- BC547 NPN Transistors (6 extra stages)
+- LEDs (10: green, yellow, red)
+- Resistor ladder (10kΩ each for voltage divider)
+- Input voltage divider resistors
+- 9V battery
+
+**Description**: A 10-LED bar graph that displays input voltage as a moving light bar. Each op-amp comparator lights one LED when the input exceeds its threshold — set by a precision resistor ladder. Green LEDs = low voltage, yellow = mid-range, red = high. Covers 0–10V (adjustable range). Great introduction to comparator circuits and visual voltage displays.
+
+**Threshold Formula**: `V_threshold(n) = (n/10) × Vref`
+
+**Key Concepts**: Op-amp comparators, resistor voltage ladders, open-loop op-amp operation, bar-graph display
+
+---
+
 ## 🔴 Advanced Projects (Multi-IC Designs)
 
 ### 16. **Digital Dice (LED Display)** ⭐⭐⭐⭐☆
@@ -527,6 +585,72 @@ circuits/
 
 ---
 
+### 30. **VU Meter (Audio Level Indicator)** ⭐⭐⭐⭐☆
+**What you'll learn**: LM3914 display driver, audio signal processing, logarithmic/linear scales
+
+**Components**:
+- LM3914 Dot/Bar Display Driver IC
+- LEDs (10: green × 6, yellow × 2, red × 2) or LED bargraph module
+- Resistors (1.2kΩ, 3.9kΩ for Vref; various input scaling)
+- Capacitors (10µF, 100nF)
+- Potentiometer (10kΩ for sensitivity)
+- 1N4148 diodes (2 for half-wave rectification)
+- 3.5mm audio jack or electret microphone
+- 9V battery
+
+**Description**: A 10-LED audio level meter that dances to music! The LM3914 contains 10 precision comparators and an internal voltage divider — no external comparator network needed. A half-wave rectifier converts the AC audio signal to a DC envelope that the LM3914 displays. Mode pin selects dot mode (single LED follows level) or bar mode (all LEDs up to current level). Perfect for speaker panels or mixing desks.
+
+**Key Concepts**: LM3914 driver IC, audio rectification, dot vs bar display mode, signal envelope detection
+
+---
+
+### 31. **Infrared Remote Control System** ⭐⭐⭐⭐☆
+**What you'll learn**: IR modulation at 38kHz, IR receiver ICs, pulse coding, remote control design
+
+**Components (Transmitter)**:
+- 555 Timer IC (38kHz carrier)
+- IR LED (TSAL6200 or similar, 940nm)
+- BC547 NPN Transistor
+- Push buttons (2–4)
+- Resistors (100Ω, 1kΩ, 10kΩ)
+- Capacitors (100nF)
+- 9V battery
+
+**Components (Receiver)**:
+- TSOP1738 IR Receiver Module
+- CD4017 Decade Counter
+- BC547 Transistors (output drivers)
+- LEDs (4 outputs)
+- Resistors (220Ω, 1kΩ)
+- 5V power supply
+
+**Description**: Build your own IR remote control! The transmitter uses a 555 timer oscillating at 38kHz to modulate IR pulses — this carrier frequency is immune to ambient room light interference. Different buttons send different numbers of pulses; the TSOP1738 receiver demodulates the 38kHz signal and the CD4017 counts pulses to determine which command was sent. Control up to four independent outputs from up to 10 metres away.
+
+**Key Concepts**: IR modulation/demodulation, 38kHz carrier, TSOP1738 receiver, pulse counting decoding
+
+---
+
+### 32. **DC-DC Boost Converter** ⭐⭐⭐⭐⭐
+**What you'll learn**: Switch-mode power supply theory, inductor energy storage, MOSFET switching, boost topology
+
+**Components**:
+- NE555 Timer IC (50–100kHz PWM oscillator)
+- IRF540N N-Channel MOSFET
+- 100µH Inductor (rated ≥ 2A)
+- 1N5819 Schottky Diode (fast recovery)
+- Capacitors (470µF output filter, 100nF decoupling)
+- Resistors (timing and gate drive)
+- LED + 1kΩ resistor (output indicator)
+- 5V input supply
+
+**Description**: Convert 5V to 12V with no transformer — just an inductor, MOSFET, and diode! When the MOSFET switches ON, the inductor stores energy in its magnetic field. When the MOSFET turns OFF, the inductor "kicks" its stored energy through the Schottky diode to the output capacitor, producing a higher voltage than the input. This is 70–85% efficient vs 30–50% for a linear regulator. A genuinely useful power electronics building block.
+
+**Output Voltage Formula**: `Vout = Vin / (1 − D)` where D = duty cycle (0 to 1)
+
+**Key Concepts**: Boost topology, duty cycle vs voltage gain, inductor energy storage, switch-mode efficiency, Schottky diodes
+
+---
+
 ## 📦 Essential Components for Circuit Building
 
 ### Basic Components (Start Here)
@@ -541,17 +665,21 @@ circuits/
 - [ ] Multimeter (essential for troubleshooting)
 
 ### Semiconductors
-- [ ] **Diodes**: 1N4007 (general purpose)
+- [ ] **Diodes**: 
+  - 1N4007 (general purpose rectifier)
+  - 1N4148 (fast switching, signal)
+  - 1N5819 (Schottky, fast recovery for switching converters)
 - [ ] **Transistors**: 
   - BC547 (NPN, small signal)
   - TIP122 or TIP31 (NPN, power)
   - BC557 (PNP, small signal)
-- [ ] **MOSFETs**: IRF540 (N-channel, power)
+- [ ] **MOSFETs**: IRF540N (N-channel, power)
 
 ### Integrated Circuits (ICs)
 - [ ] **555 Timer IC** (NE555 or LM555) - Most versatile IC ever made!
 - [ ] **LM358** Dual Op-Amp - Audio, comparators, amplifiers
 - [ ] **LM324** Quad Op-Amp - More op-amps in one package
+- [ ] **LM339** Quad Comparator - Logic probe, level detectors
 - [ ] **CD4017** Decade Counter - Sequential circuits
 - [ ] **CD4026/CD4033** BCD Counter with 7-segment driver
 - [ ] **CD4011** Quad NAND Gate - Logic circuits
@@ -560,19 +688,27 @@ circuits/
 - [ ] **LM7812** +12V Regulator
 - [ ] **LM317** Variable Regulator
 - [ ] **LM386** Audio Amplifier
+- [ ] **LM3914** Dot/Bar Display Driver - VU meters, voltage displays
 - [ ] **ULN2003** Darlington Array - Motor/relay driver
 
 ### Sensors & Special Components
 - [ ] LDR (Light Dependent Resistor)
 - [ ] LM35 Temperature Sensor
 - [ ] Electret microphone
-- [ ] IR LED and IR photodiode
+- [ ] IR LED (TSAL6200 or similar, 940nm)
+- [ ] IR photodiode or phototransistor
+- [ ] TSOP1738 IR Receiver Module (38kHz)
 - [ ] Piezo buzzer (active and passive)
+- [ ] 8Ω speaker (for metronome / audio projects)
 - [ ] Potentiometers (10kΩ, 100kΩ)
+
+### Inductors & Magnetics (for switching converters)
+- [ ] 100µH inductor (rated ≥ 2A) - DC-DC boost converter
 
 ### Display Components
 - [ ] 7-Segment displays (common cathode and common anode)
 - [ ] LEDs (various colors)
+- [ ] LED bargraph module (10-segment) - optional for VU meter
 
 ### Power & Protection
 - [ ] Relays (5V, 12V)
@@ -790,6 +926,14 @@ When building circuits, document them well!
 13. Choose 2-3 advanced projects that interest you
 14. Take your time, understand every component
 15. Document your work thoroughly
+
+### Week 13-16: New Intermediate & Advanced
+16. Electronic Metronome (audio with the 555)
+17. Capacitance Tester (monostable 555 — build a useful tool!)
+18. LED Bar Graph Voltmeter (op-amp comparator arrays)
+19. VU Meter (LM3914 — professional-looking audio display)
+20. IR Remote Control System (modulated IR communication)
+21. DC-DC Boost Converter (switch-mode power supply)
 
 ---
 
