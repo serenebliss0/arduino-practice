@@ -1,4 +1,4 @@
-# Arduino & Electronics Practice Repository 🤖⚡
+# Arduino & Electronics Practice Repository
 
 Welcome to my electronics learning journey! This repository contains both **Arduino microcontroller projects** and **pure electronic circuits** (without microcontrollers). Whether you're interested in programming or hardware design, you'll find projects here to expand your skills.
 
@@ -127,7 +127,7 @@ Learn electronics fundamentals by building circuits using ICs, transistors, and 
 - And more!
 
 #### Intermediate (12 Projects)
-- SR Latch (Set-Reset Flip-Flop) ✅ *Already built!*
+- SR Latch (Set-Reset Flip-Flop)
 - Clap Switch (sound-activated)
 - Adjustable Power Supply (LM317)
 - Infrared Proximity Sensor
@@ -233,6 +233,7 @@ This is a personal learning repository, but feel free to:
 - Suggest improvements
 - Share ideas for new projects
 - Report issues or bugs in the code
+- Visit the [Issues](https://github.com/serenebliss0/arduino-practice/issues) tab to suggest your idea or report an issue! 
 
 ---
 
