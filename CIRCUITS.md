@@ -43,7 +43,7 @@ circuits/
 
 ---
 
-### 2. **Simple LED Flashlight** ⭐☆☆☆☆
+### 2. **Simple LED Flashlight** ⭐☆☆☆☆ ✔️
 **What you'll learn**: Basic circuits, series and parallel connections
 
 **Components**:
@@ -59,7 +59,7 @@ circuits/
 
 ---
 
-### 3. **Dark-Activated LED (Light Sensor)** ⭐⭐☆☆☆
+### 3. **Dark-Activated LED (Light Sensor)** ⭐⭐☆☆☆ ✔️
 **What you'll learn**: Transistors as switches, sensors
 
 **Components**:
@@ -75,7 +75,7 @@ circuits/
 
 ---
 
-### 4. **Push Button with Debouncing** ⭐⭐☆☆☆
+### 4. **Push Button with Debouncing** ⭐⭐☆☆☆ ✔️
 **What you'll learn**: Mechanical switch behavior, RC circuits
 
 **Components**:
@@ -91,7 +91,7 @@ circuits/
 
 ---
 
-### 5. **Simple Audio Amplifier** ⭐⭐⭐☆☆
+### 5. **Simple Audio Amplifier** ⭐⭐⭐☆☆ ✔️
 **What you'll learn**: Amplification basics, audio circuits
 
 **Components**:
@@ -110,7 +110,7 @@ circuits/
 
 ---
 
-### 6. **LED Chaser/Sequencer (4017 IC)** ⭐⭐⭐☆☆
+### 6. **LED Chaser/Sequencer (4017 IC)** ⭐⭐⭐☆☆ ✔️
 **What you'll learn**: Decade counters, sequential logic
 
 **Components**:
@@ -147,7 +147,7 @@ circuits/
 
 ## 🟡 Intermediate Projects (ICs and Complex Logic)
 
-### 8. **SR Latch (Set-Reset Flip-Flop)** ⭐⭐⭐☆☆
+### 8. **SR Latch (Set-Reset Flip-Flop)** ⭐⭐⭐☆☆ ✔️
 **What you'll learn**: Digital memory, flip-flops, basic logic gates
 
 **Components**:
@@ -652,6 +652,8 @@ circuits/
 ---
 
 ## 📦 Essential Components for Circuit Building
+
+### See [SHOPPING_LIST.md](SHOPPING_LIST.md) for more
 
 ### Basic Components (Start Here)
 - [ ] Breadboard (830 points minimum)
