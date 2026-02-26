@@ -2,6 +2,7 @@
 
 > **How to use this list**: Check off items as you buy them. Everything in this file covers all **32 circuit projects** (no microcontroller) and all **Arduino/ESP32 projects** in this repository. Buy the Grand Total section at the bottom to get everything in one order.
 
+> You **don't** need to buy all of these in one go! Buy components as you need them.
 ---
 
 ## 1. MICROCONTROLLER BOARDS
@@ -496,6 +497,7 @@ These appear across many Arduino basics projects:
 | Store | Best For | Notes |
 |-------|----------|-------|
 | **AliExpress** | Bulk components, clones, sensors | Cheapest; 2–4 week shipping |
+| **Temu** | Bulk components, clones, sensors | Cheapest; Usually has free shipping options |
 | **Amazon** | Quick delivery, kits, power supplies | 2-day Prime; slightly more expensive |
 | **Adafruit** (adafruit.com) | Quality breakout boards, sensors | Best documentation; US-based |
 | **SparkFun** (sparkfun.com) | Quality modules, unique sensors | US-based; good tutorials |
@@ -505,4 +507,4 @@ These appear across many Arduino basics projects:
 
 ---
 
-*Last updated: Based on repository contents including 32 circuit projects and all Arduino/ESP32 projects.*
+*Last updated: February 2026; Based on repository contents including 32 circuit projects and all Arduino/ESP32 projects.*
