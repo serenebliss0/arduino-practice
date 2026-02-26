@@ -17,12 +17,28 @@ This folder contains templates to help you quickly start new Arduino projects wi
 3. Create a README.md file
 4. Use the template as a guide for what to include
 
+### Method 3: Using PlatformIO
+1. Create your main folder
+2. Add your PlatformIO project into the main folder
+3. Create a readme in the main folder for the project
+4. Add any schematics, datasheets, photos, and videos in the main folder
+
 ## Template Structure
 
 ```
 project-template/
 ├── project-name.ino    # Arduino sketch with code template
 └── README.md           # Project documentation template
+```
+OR
+
+```
+project-template/
+├── project-name/       # PlatformIO project
+└── README.md           # Project documentation template
+└── Datasheet.pdf       # If you used any ICs and other components add the datasheet here
+└── Schematic.pdf       # Add a pdf version of any schema you design
+└── Schematic/          # Your schematic folder (if needed by your CAD software)
 ```
 
 ## What to Include in Your Project
