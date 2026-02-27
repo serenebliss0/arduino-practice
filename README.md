@@ -1,4 +1,4 @@
-# Arduino & Electronics Practice Repository 🤖⚡
+# Arduino & Electronics Practice Repository
 
 Welcome to my electronics learning journey! This repository contains both **Arduino microcontroller projects** and **pure electronic circuits** (without microcontrollers). Whether you're interested in programming or hardware design, you'll find projects here to expand your skills.
 
@@ -104,7 +104,7 @@ ESP32 Centric projects:
 Learn electronics fundamentals by building circuits using ICs, transistors, and discrete components - **no programming required!** Perfect for understanding how hardware works at a deeper level.
 
 ### What's Included:
-- **26+ Circuit Projects**: From beginner to advanced
+- **32+ Circuit Projects**: From beginner to advanced
 - **Practical Learning**: 555 timers, op-amps, logic gates, counters, and more
 - **Real Applications**: Amplifiers, power supplies, oscillators, sensors
 - **Hardware Focus**: Pure analog and digital circuit design
@@ -126,22 +126,28 @@ Learn electronics fundamentals by building circuits using ICs, transistors, and 
 - Touch Switch
 - And more!
 
-#### Intermediate (9 Projects)
-- SR Latch (Set-Reset Flip-Flop) ✅ *Already built!*
+#### Intermediate (12 Projects)
+- SR Latch (Set-Reset Flip-Flop)
 - Clap Switch (sound-activated)
 - Adjustable Power Supply (LM317)
 - Infrared Proximity Sensor
 - Motor Speed Controller (PWM)
 - Water Level Indicator
+- Electronic Metronome (adjustable BPM)
+- Capacitance Tester (identify unknown capacitors)
+- LED Bar Graph Voltmeter
 - And more!
 
-#### Advanced (10 Projects)
+#### Advanced (13 Projects)
 - Function Generator (sine, square, triangle waves)
 - Security Alarm System
 - Digital Dice with 7-segment display
 - Traffic Light Controller
 - Stepper Motor Driver
 - Temperature-Controlled Fan
+- VU Meter (Audio Level Indicator)
+- Infrared Remote Control System
+- DC-DC Boost Converter (switch-mode power supply)
 - And more!
 
 ### 📚 Full Documentation
@@ -194,12 +200,21 @@ Check out **[PROJECT_SUGGESTIONS.md](PROJECT_SUGGESTIONS.md)** for 50+ Arduino p
 - Components shopping list
 
 ### Circuit Projects (No Microcontroller)
-Check out **[CIRCUITS.md](CIRCUITS.md)** for 26+ pure electronics projects! Includes:
+Check out **[CIRCUITS.md](CIRCUITS.md)** for 32+ pure electronics projects! Includes:
 - Beginner circuits with 555 timers and basic ICs
 - Intermediate circuits with op-amps and logic gates
 - Advanced circuits with multiple ICs and complex designs
 - Essential components guide
 - Circuit design tips and learning resources
+
+## 🛒 Shopping List
+
+Need to buy parts? Check out **[SHOPPING_LIST.md](SHOPPING_LIST.md)** for a complete, consolidated shopping list covering **every component** needed for:
+- All 32+ circuit projects (no microcontroller)
+- All Arduino microcontroller projects
+- All ESP32 projects
+
+Organized by category (resistors, capacitors, ICs, sensors, etc.) with quantities, cost estimates, and sourcing tips so you can buy everything in one go.
 
 ## 🔗 Useful Links
 
@@ -218,6 +233,7 @@ This is a personal learning repository, but feel free to:
 - Suggest improvements
 - Share ideas for new projects
 - Report issues or bugs in the code
+- Visit the [Issues](https://github.com/serenebliss0/arduino-practice/issues) tab to suggest your idea or report an issue! 
 
 ---
 

@@ -96,12 +96,24 @@ The ESP32 is a series of low-cost, low-power system-on-chip microcontrollers wit
 
 ## 💻 Software Installation
 
+> For this part of the repo I will mostly utilize PlatformIO instead
+
 ### Step 1: Install Arduino IDE
 
 If you haven't already:
 1. Download Arduino IDE from [arduino.cc](https://www.arduino.cc/en/software)
 2. Install version 1.8.x or 2.x
 3. Launch Arduino IDE
+
+OR
+
+### Step 1: Install PlatformIO
+> Follow [this](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode) guide
+
+If you haven't already:
+1. Download Visual Studio Code
+2. Install `PlatformIO` from the extensions marketplace
+3. Wait for the install to finish
 
 ### Step 2: Add ESP32 Board Support
 
@@ -163,6 +175,9 @@ Most ESP32 boards use one of these USB-to-serial chips:
 #### CH340 Driver
 - Download from [manufacturer](http://www.wch-ic.com/downloads/CH341SER_EXE.html)
 - Common on cheaper boards
+
+#### CH9102 Driver
+- I Downloaded mine from [this](https://github.com/Xinyuan-LilyGO/CH9102_Driver/blob/main/CH9102_WIN.EXE) github repository
 
 **How to check**: Look at the small chip near the USB port on your board.
 
@@ -490,7 +505,7 @@ These pins affect boot mode - use carefully:
 
 #### "Serial port not found"
 **Solutions**:
-1. Install USB drivers (CP2102 or CH340)
+1. Install USB drivers (CP2102, CH9102, CH340)
 2. Check Device Manager (Windows) or `ls /dev/tty*` (Mac/Linux)
 3. Try different USB cable
 4. Check if board is powered (LED should be on)
