@@ -42,6 +42,18 @@
 		{
 			"name": "ir-receiver",
 			"path": "projects/04-communication/ir-receiver"
+		},
+		{
+			"name": "automatic-night-light",
+			"path": "projects/02-sensors/automatic-night-light"
+		},
+		{
+			"name": "sound-sensor",
+			"path": "projects/02-sensors/sound-sensor"
+		},
+		{
+			"name": "esp32-smart-speaker",
+			"path": "projects/07-esp32/esp32-smart-speaker"
 		}
 	],
 	"settings": {
