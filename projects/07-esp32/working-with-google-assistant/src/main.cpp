@@ -23,14 +23,14 @@
 #include <SinricProSwitch.h>
 
 int LEDPINS[] = {2,4,5,12,13,14,15,18,19,23};
-const char* ssid = "IZEHI_HOTSPOT4";
-const char* password = "  semire ajayi";
+const char* ssid = "";
+const char* password = " ";
 
 //from sinric pro dashbaord
 //get yours at `portal.sinric.pro`
-#define APP_KEY    "9741b1b9-8d9a-435b-894c-d4a2e2b392ed" 
-#define APP_SECRET "6314c3eb-8a42-40df-8f5e-1dc01b5f8fbe-acb4bf79-057a-4c54-8c97-05d265118535" 
-#define DEVICE_ID "698f54d1da2ae47a6c956e4d" 
+#define APP_KEY    "" 
+#define APP_SECRET "" 
+#define DEVICE_ID "" 
 
 //this function is what gives the leds functionality
 bool onPowerState(const String &deviceId, bool &state) 

@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <WiFi.h>
 #include <Audio.h>
 #include <AudioFileSourceICYStream.h>
