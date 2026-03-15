@@ -59,6 +59,7 @@
 	"settings": {
 		"vscode-pets.theme": "none",
 		"vscode-pets.throwBallWithMouse": true,
-		"vscode-pets.petSize": "small"
+		"vscode-pets.petSize": "small",
+		"liveServer.settings.multiRootWorkspaceName": "esp32-smart-speaker"
 	}
 }
