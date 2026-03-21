@@ -1,0 +1,361 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body-like {
+    font-family: 'Nunito', sans-serif;
+    background: #fdf6fb;
+  }
+
+  .app {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #fdf0f8 0%, #f0f4ff 100%);
+    min-height: 600px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #c084b0;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .logo span { color: #a5b4fc; }
+
+  .card {
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    border: 1.5px solid rgba(192, 132, 176, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c084b0;
+    margin-bottom: 14px;
+  }
+
+  /* battery */
+  .battery-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .battery-bar-wrap {
+    flex: 1;
+    height: 14px;
+    background: #f3e8ff;
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1.5px solid rgba(192,132,176,0.25);
+  }
+  .battery-bar {
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #f9a8d4, #c084b0);
+    transition: width 0.6s ease;
+  }
+  .battery-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c084b0;
+    min-width: 40px;
+    text-align: right;
+  }
+
+  /* mode switcher */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .mode-btn {
+    background: #fdf0f8;
+    border: 1.5px solid rgba(192,132,176,0.3);
+    border-radius: 14px;
+    padding: 12px 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-family: 'Nunito', sans-serif;
+  }
+  .mode-btn:hover { background: #fce7f8; transform: scale(1.02); }
+  .mode-btn.active {
+    background: #f0e0ff;
+    border-color: #c084b0;
+    box-shadow: 0 0 0 3px rgba(192,132,176,0.15);
+  }
+  .mode-icon { font-size: 22px; display: block; margin-bottom: 4px; }
+  .mode-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #9d6fa0;
+    letter-spacing: 0.3px;
+  }
+
+  /* volume */
+  .vol-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .vol-icon { font-size: 18px; flex-shrink: 0; }
+  input[type=range] {
+    flex: 1;
+    -webkit-appearance: none;
+    height: 6px;
+    background: linear-gradient(90deg, #f9a8d4 var(--pct, 70%), #f3e8ff var(--pct, 70%));
+    border-radius: 99px;
+    outline: none;
+    border: none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #c084b0;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 1px 4px rgba(192,132,176,0.4);
+  }
+  .vol-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c084b0;
+    min-width: 32px;
+    text-align: right;
+  }
+
+  /* playback */
+  .playback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .ctrl-btn {
+    background: #fdf0f8;
+    border: 1.5px solid rgba(192,132,176,0.3);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.15s;
+    font-family: 'Nunito', sans-serif;
+  }
+  .ctrl-btn:hover { background: #fce7f8; transform: scale(1.08); }
+  .ctrl-btn:active { transform: scale(0.94); }
+
+  .play-btn {
+    width: 58px;
+    height: 58px;
+    font-size: 22px;
+    background: linear-gradient(135deg, #f9a8d4, #c084b0);
+    border-color: transparent;
+    color: white;
+  }
+  .play-btn:hover { background: linear-gradient(135deg, #f472b6, #a855f7); }
+
+  .now-playing {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .np-track {
+    font-size: 15px;
+    font-weight: 700;
+    color: #7c3f7e;
+  }
+  .np-sub {
+    font-size: 12px;
+    color: #c084b0;
+    margin-top: 2px;
+  }
+
+  .progress-wrap {
+    height: 5px;
+    background: #f3e8ff;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .progress-bar {
+    height: 100%;
+    width: 38%;
+    background: linear-gradient(90deg, #f9a8d4, #c084b0);
+    border-radius: 99px;
+    animation: prog 8s linear infinite;
+  }
+  @keyframes prog {
+    from { width: 38%; }
+    to { width: 95%; }
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #86efac;
+    margin-right: 6px;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .status-text {
+    font-size: 12px;
+    color: #a3a8c0;
+    text-align: center;
+    margin-top: -8px;
+  }
+</style>
+
+
+<div class="app">
+  <div class="logo">wave<span>let</span></div>
+
+  <div class="card">
+    <div class="section-label">now playing</div>
+    <div class="now-playing">
+      <div class="np-track" id="np-track">Magnetic — ILLIT</div>
+      <div class="np-sub" id="np-sub">connected via bluetooth</div>
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="prog-bar"></div></div>
+    <div class="playback">
+      <button class="ctrl-btn" id="btn-prev" title="Previous">&#9664;&#9664;</button>
+      <button class="ctrl-btn play-btn" id="btn-play" title="Play/Pause">&#9646;&#9646;</button>
+      <button class="ctrl-btn" id="btn-next" title="Next">&#9654;&#9654;</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">volume</div>
+    <div class="vol-row">
+      <span class="vol-icon">&#128264;</span>
+      <input type="range" id="vol-slider" min="0" max="127" value="90" step="1">
+      <span class="vol-val" id="vol-val">71%</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">mode</div>
+    <div class="mode-grid">
+      <button class="mode-btn active" data-mode="bluetooth">
+        <span class="mode-icon">&#128266;</span>
+        <span class="mode-name">Bluetooth</span>
+      </button>
+      <button class="mode-btn" data-mode="wifi">
+        <span class="mode-icon">&#128225;</span>
+        <span class="mode-name">Wi-Fi Stream</span>
+      </button>
+      <button class="mode-btn" data-mode="assistant">
+        <span class="mode-icon">&#10024;</span>
+        <span class="mode-name">Assistant</span>
+      </button>
+      <button class="mode-btn" data-mode="aux">
+        <span class="mode-icon">&#127911;</span>
+        <span class="mode-name">AUX / Jack</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">battery</div>
+    <div class="battery-row">
+      <span style="font-size:16px;">&#128267;</span>
+      <div class="battery-bar-wrap">
+        <div class="battery-bar" id="bat-bar" style="width: 78%"></div>
+      </div>
+      <span class="battery-label" id="bat-label">78%</span>
+    </div>
+  </div>
+
+  <div class="status-text">
+    <span class="status-dot"></span>wavelet.local
+  </div>
+</div>
+
+<script>
+  const volSlider = document.getElementById('vol-slider');
+  const volVal = document.getElementById('vol-val');
+
+  function updateSliderBg() {
+    const pct = Math.round((volSlider.value / 127) * 100);
+    volSlider.style.setProperty('--pct', pct + '%');
+    volVal.textContent = pct + '%';
+  }
+  volSlider.addEventListener('input', updateSliderBg);
+  updateSliderBg();
+
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode = btn.dataset.mode;
+      const sub = document.getElementById('np-sub');
+      if (mode === 'bluetooth') sub.textContent = 'Connected via Bluetooth';
+      else if (mode === 'wifi') sub.textContent = 'Streaming over Wi-Fi';
+      else if (mode === 'assistant') sub.textContent = 'Smart Assistant Mode';
+      else sub.textContent = 'AUX / Headphone Jack';
+    });
+  });
+
+  let playing = true;
+  const playBtn = document.getElementById('btn-play');
+  const progBar = document.getElementById('prog-bar');
+
+  playBtn.addEventListener('click', () => {
+    playing = !playing;
+    playBtn.innerHTML = playing ? '&#9646;&#9646;' : '&#9654;';
+    progBar.style.animationPlayState = playing ? 'running' : 'paused';
+  });
+
+  const tracks = [
+    ['Magnetic — ILLIT', 'K-pop'],
+    ['Buttons — Lyn Lapid', 'Indie pop'],
+    ['Hype Boy — NewJeans', 'K-pop'],
+    ['Attention — NewJeans', 'K-pop'],
+  ];
+  let trackIdx = 0;
+
+  function setTrack(i) {
+    trackIdx = (i + tracks.length) % tracks.length;
+    document.getElementById('np-track').textContent = tracks[trackIdx][0];
+    progBar.style.animation = 'none';
+    void progBar.offsetWidth;
+    progBar.style.animation = '';
+  }
+
+  document.getElementById('btn-next').addEventListener('click', () => setTrack(trackIdx + 1));
+  document.getElementById('btn-prev').addEventListener('click', () => setTrack(trackIdx - 1));
+
+  setInterval(() => {
+    const raw = parseInt(Math.random() * 5 - 2 + 78);
+    const pct = Math.min(100, Math.max(0, raw));
+    document.getElementById('bat-bar').style.width = pct + '%';
+    document.getElementById('bat-label').textContent = pct + '%';
+  }, 4000);
+</script>

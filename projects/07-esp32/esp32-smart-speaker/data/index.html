@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavelet Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">wavelet</h1>
+    </header>
+
+    <main id="dashboard-view" class="dashboard-grid">
+        <div class="column left-col">
+            <div class="card now-playing">
+                <div class="section-title">NOW PLAYING</div>
+                <div class="track-info">
+                    <img id="album-art" src="https://via.placeholder.com/150" alt="Album Art">
+                    <div class="details">
+                        <h2 id="track-title">Loading...</h2>
+                        <p id="connection-status">Connected via WiFi</p>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <span id="time-current">0:00</span>
+                    <input type="range" id="track-progress" value="0" max="100">
+                    <span id="time-total">2:59</span>
+                </div>
+                <div class="controls">
+                    <button id="btn-prev"><i class="fas fa-backward"></i></button>
+                    <button id="btn-play-pause" class="play-btn"><i class="fas fa-pause"></i></button>
+                    <button id="btn-next"><i class="fas fa-forward"></i></button>
+                </div>
+            </div>
+
+            <div class="card volume-card">
+                <div class="section-title">VOLUME</div>
+                <div class="slider-group">
+                    <input type="range" id="volume-slider" value="67" max="100">
+                    <span id="volume-label" class="bold-value">67%</span>
+                </div>
+                <div id="volume-overlay" class="overlay hidden">Volume controls are not available in this mode</div>
+            </div>
+
+            <div class="card battery-card">
+                <div class="section-title">BATTERY PERCENTAGE</div>
+                <div class="slider-group">
+                    <input type="range" id="battery-level" value="1" max="100" disabled>
+                    <span id="battery-label" class="bold-value">1%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="column right-col">
+            <div id="mic-status-container" class="status-indicator hidden">
+                <span class="dot green" id="mic-dot"></span> 
+                <div class="mic-text">
+                    <span id="mic-status-text">Microphone is on</span>
+                    <small id="mic-subtext" class="hidden">Smart Assistant can't hear you</small>
+                </div>
+            </div>
+
+            <div class="card quick-settings">
+                <div class="section-title">Quick Settings</div>
+                <div class="icon-row">
+                    <button id="qs-wifi" class="icon-btn active"><i class="fas fa-wifi"></i></button>
+                    <button id="qs-bt" class="icon-btn"><i class="fab fa-bluetooth-b"></i></button>
+                    <button id="qs-mic" class="icon-btn"><i class="fas fa-microphone"></i></button>
+                    <button id="qs-settings" class="icon-btn"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+
+            <button class="mode-btn" id="mode-bt"><i class="fab fa-bluetooth-b"></i> Bluetooth</button>
+            <button class="mode-btn" id="mode-smart"><i class="fas fa-microphone"></i> Smart Assistant</button>
+            <button class="mode-btn active" id="mode-wifi"><i class="fas fa-wifi"></i> WiFi Streaming</button>
+            <button class="mode-btn" id="mode-aux"><i class="fas fa-hdd"></i> AUX Port</button>
+        </div>
+    </main>
+
+    <main id="settings-view" class="dashboard-grid hidden">
+        <div class="column left-col">
+            <div class="card quick-settings">
+                <div class="section-title">Quick Settings</div>
+                <div class="icon-row">
+                    <button class="icon-btn active"><i class="fas fa-wifi"></i></button>
+                    <button class="icon-btn"><i class="fab fa-bluetooth-b"></i></button>
+                    <button class="icon-btn danger"><i class="fas fa-power-off"></i></button>
+                    <button id="qs-home" class="icon-btn"><i class="fas fa-home"></i></button>
+                </div>
+            </div>
+            
+            <button class="mode-btn settings-tab active" data-target="tab-general"><i class="fas fa-th-large"></i> General</button>
+            <button class="mode-btn settings-tab" data-target="tab-connection"><i class="fas fa-cast"></i> Connection</button>
+            <button class="mode-btn settings-tab"><i class="fas fa-info-circle"></i> About Device</button>
+            <button class="mode-btn settings-tab"><i class="fas fa-box"></i> Software Updates</button>
+        </div>
+
+        <div class="column right-col">
+            <div class="card settings-content">
+                <div id="tab-general" class="settings-pane">
+                    <div class="input-group">
+                        <label>Device Name</label>
+                        <div class="input-box">
+                            <input type="text" value="ESP32 Speaker">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="toggle-row">
+                        <div class="toggle-group">
+                            <label>Enable Startup Chime</label>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                        <div class="toggle-group">
+                            <label>Enable Startup Beep</label>
+                            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Default mode on startup</label>
+                        <div class="input-box">
+                            <select>
+                                <option>Bluetooth</option>
+                                <option>WIFI</option>
+                                <option>Smart Assistant</option>
+                                <option>AUX Mode</option>
+                            </select>
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="themes-group">
+                        <label>Themes</label>
+                        <div class="theme-selector">
+                            <div class="theme-opt"><div class="theme-bubble default" data-theme="default"></div><span>Default</span></div>
+                            <div class="theme-opt"><div class="theme-bubble light" data-theme="light"></div><span>Light</span></div>
+                            <div class="theme-opt"><div class="theme-bubble dark" data-theme="dark"></div><span>Dark</span></div>
+                            <div class="theme-opt"><div class="theme-bubble blue" data-theme="blue"></div><span>Blue</span></div>
+                            <div class="theme-opt"><div class="theme-bubble blackpink" data-theme="blackpink"></div><span>BLACKPINK</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-connection" class="settings-pane hidden">
+                    <div class="input-group">
+                        <label>Your Device is visible as:</label>
+                        <div class="input-box">
+                            <input type="text" value="ESP32 Speaker">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="two-col-inputs">
+                        <div class="input-group">
+                            <label>WIFI Network Name:</label>
+                            <div class="input-box">
+                                <input type="text" value="ESP32 Speaker STA">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>mDNS Hostname:</label>
+                            <div class="input-box read-only">
+                                <span>wavelet.local</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>WIFI Network Password:</label>
+                        <div class="input-box"><input type="password" value="12345678"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "setting_up",
+			"path": "projects/07-esp32/platformIO/setting_up"
+		},
+		{
+			"name": "wifi_scanner",
+			"path": "projects/07-esp32/01-wifi-scanner/wifi_scanner"
+		},
+		{
+			"name": "working-with-google-assistant",
+			"path": "projects/07-esp32/working-with-google-assistant"
+		},
+		{
+			"name": "dfplayer-mp3-player",
+			"path": "projects/07-esp32/dfplayer-mp3-player"
+		},
+		{
+			"name": "web-server",
+			"path": "projects/07-esp32/02-web-server/web-server"
+		},
+		{
+			"name": "lm386-bluetooth-speaker",
+			"path": "projects/07-esp32/lm386-bluetooth-speaker"
+		},
+		{
+			"name": "lm386-bt-speaker",
+			"path": "projects/07-esp32/lm386-bt-speaker"
+		},
+		{
+			"name": "google-assistant-smart-speaker",
+			"path": "projects/07-esp32/09-bluetooth-speaker/google-assistant-smart-speaker"
+		},
+		{
+			"name": "ir-remote-control",
+			"path": "projects/04-communication/ir-remote-control"
+		},
+		{
+			"name": "ir-receiver",
+			"path": "projects/04-communication/ir-receiver"
+		},
+		{
+			"name": "automatic-night-light",
+			"path": "projects/02-sensors/automatic-night-light"
+		},
+		{
+			"name": "sound-sensor",
+			"path": "projects/02-sensors/sound-sensor"
+		},
+		{
+			"name": "esp32-smart-speaker",
+			"path": "projects/07-esp32/esp32-smart-speaker"
+		}
+	],
+	"settings": {
+		"vscode-pets.theme": "none",
+		"vscode-pets.throwBallWithMouse": true,
+		"vscode-pets.petSize": "small",
+		"liveServer.settings.multiRootWorkspaceName": "arduino-practice"
+	}
+}
