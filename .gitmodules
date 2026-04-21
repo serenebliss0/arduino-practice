@@ -1,3 +1,6 @@
 [submodule "projects/07-esp32/esp32-smart-speaker"]
 	path = projects/07-esp32/esp32-smart-speaker
 	url = https://github.com/serenebliss0/esp32-smart-speaker.git
+[submodule "projects/07-esp32/esp32-keyboard"]
+	path = projects/07-esp32/esp32-keyboard
+	url = https://github.com/serenebliss0/esp32-keyboard.git
