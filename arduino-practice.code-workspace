@@ -54,6 +54,10 @@
 		{
 			"name": "esp32-smart-speaker",
 			"path": "projects/07-esp32/esp32-smart-speaker"
+		},
+		{
+			"name": "esp32-keyboard",
+			"path": "projects/07-esp32/esp32-keyboard/esp32-keyboard"
 		}
 	],
 	"settings": {
