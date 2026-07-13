@@ -58,6 +58,14 @@
 		{
 			"name": "esp32-keyboard",
 			"path": "projects/07-esp32/esp32-keyboard/esp32-keyboard"
+		},
+		{
+			"name": "esp32-spotify",
+			"path": "projects/07-esp32/esp32-spotify"
+		},
+		{
+			"name": "esp32-bt-advertizing",
+			"path": "projects/07-esp32/esp32-bt-advertizing"
 		}
 	],
 	"settings": {
