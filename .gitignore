@@ -94,3 +94,8 @@ coverage/
 
 
 info.html
+
+# ---------------------------
+# Local secret configuration
+# ---------------------------
+**/secrets.h

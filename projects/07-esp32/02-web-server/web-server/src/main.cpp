@@ -21,9 +21,29 @@
 #include <WiFi.h>
 #include <WebServer.h>
 
-// WiFi credentials - CHANGE THESE!
-const char* ssid = "MTN_4G_2CDDDC";
-const char* password = "DB27F0D5";
+ #if __has_include("secrets.h")
+ #include "secrets.h"
+ #endif
+
+ #ifndef WIFI_SSID
+ #define WIFI_SSID "YOUR_WIFI_SSID"
+ #endif
+
+ #ifndef WIFI_PASSWORD
+ #define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+ #endif
+
+ #ifndef AP_SSID
+ #define AP_SSID "ESP32_AP"
+ #endif
+
+ #ifndef AP_PASSWORD
+ #define AP_PASSWORD "CHANGE_ME_123"
+ #endif
+
+ // WiFi credentials - CHANGE THESE!
+ const char* ssid = WIFI_SSID;
+ const char* password = WIFI_PASSWORD;
 
 // LED Pin definitions
 const int LED1_PIN = 25;
@@ -52,7 +72,7 @@ void connectToWiFi() {
   
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-  WiFi.softAP("Serenitywifi", "serenebliss");
+  WiFi.softAP(AP_SSID, AP_PASSWORD);
   
   int attempts = 0;
   while (WiFi.status() != WL_CONNECTED && attempts < 30) {
