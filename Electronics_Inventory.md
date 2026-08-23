@@ -117,6 +117,7 @@
 - Arduino UNO Rev3 — 1 pc
 - ESP32 DevKit V1 — 1 pc
 - ESP32 C3 Super Mini — 1 pc
+- 2.8inch ESP32 S3 Display Module — 1 pc
 
 ## PCB
 
@@ -134,6 +135,7 @@
 - 504 Byte NFC Tags— 30 pcs
 - RFID Tag — 2 pcs
 - Mini Fan Blade — 1 pc
+- Micro SD card (1GB) — 1 pc
 
 ## Extras
 

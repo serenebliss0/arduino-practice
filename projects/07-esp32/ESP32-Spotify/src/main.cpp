@@ -1,12 +1,17 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include "SpotifyEsp32.h"
+#include <time.h>
 
-const char* SSID = "";
-const char* PASSWORD = "";
-const char* CLIENT_ID = "":
-const char* CLIENT_SECRET = "";
-const char* REFRESH_TOKEN = "";
+
+const char* SSID = "Oasis WiFi 2.4G";
+const char* PASSWORD = "pROMordPorKE1!";
+const char* CLIENT_ID = "09f8277699b4417d94cdf4fe020f7c8d";
+const char* CLIENT_SECRET = "ca8a843f59b94024ac275bec538e09b9";
+const char* REFRESH_TOKEN = "AQDFMlMPczYSZLqpwQT6-73isf4IQpgbuGH5WTSjYomHEtNjL-fJ_7poI-3vbvvdNCyk4wL98xa0sNNQsPUmsPMvyRS453KV9ynVm3X8InpDtbqYnX2R7juG4Nh1OZNkXG0";
+// Create an instance of the Spotify class (optional: specify retry count)
+
+
 // Create an instance of the Spotify class (optional: specify retry count)
 Spotify sp(CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN);
 
@@ -18,49 +23,7 @@ void connect_to_wifi() {
         Serial.print(".");
     }
     Serial.println("\nConnected to WiFi!");
-
-    configTime(
-        0,
-        0,
-        "pool.ntp.org",
-        "time.nist.gov"
-    );
-
-    time_t now = time(nullptr);
-
-Serial.print("Waiting for time");
-
-while (now < 1000000000) {
-    delay(500);
-    Serial.print(".");
-    now = time(nullptr);
-}
-
-Serial.println();
-Serial.println("Time synchronized!");
-}
-
-
-const int PLAY_BUTTON = 23;
-const int PREV_BUTTON = 21;
-const int NXT_BUTTON = 19;
-
-volatile bool play_buttonPressed = false;
-volatile bool prev_buttonPressed = false;
-volatile bool next_buttonPressed = false;
-
-
-void IRAM_ATTR play_buttonISR() {
-    play_buttonPressed = true;
-}
-
-void IRAM_ATTR prev_buttonISR() {
-    prev_buttonPressed = true;
-}
-
-void IRAM_ATTR next_buttonISR() {
-    next_buttonPressed = true;
-}
+   }
 
 
 void setup() {
@@ -77,161 +40,43 @@ void setup() {
 
  Serial.printf("Authenticated! Refresh token: %s\n", sp.get_user_tokens().refresh_token);
 
- pinMode(PLAY_BUTTON, INPUT_PULLUP);
- pinMode(PREV_BUTTON, INPUT_PULLUP);
-pinMode(NXT_BUTTON, INPUT_PULLUP);
-
- attachInterrupt(
-    digitalPinToInterrupt(PLAY_BUTTON),
-    play_buttonISR,
-    FALLING
- );
-
- attachInterrupt(
-    digitalPinToInterrupt(PREV_BUTTON),
-    prev_buttonISR,
-    FALLING
- );
-
- attachInterrupt(
-    digitalPinToInterrupt(NXT_BUTTON),
-    next_buttonISR,
-    FALLING
- );
-
 
 }
-
-String lastTrack = "";
-String lastArtist = "";
-bool lastPlaying = false;
-
-
-void getCurrentlyPlaying() {
-if(sp.is_playing() != lastPlaying ||
-sp.current_track_name() != lastTrack || sp.current_artist_names() != lastArtist)
-{
- lastTrack = sp.current_track_name();
- lastArtist = sp.current_artist_names();
- lastPlaying = sp.is_playing();
-
- Serial.println();
- Serial.println("==========");
- Serial.println(lastPlaying ? "▶ Playing" : "⏸ Paused");
- Serial.println(lastArtist);
- Serial.println(lastTrack);
- Serial.println("==========");
-}
-delay(1500);
-}
-
-void pauseCurrentlyPlaying() {
-
-    if (sp.is_playing() == true) 
-    {
-        response res = sp.pause_playback();
-        Serial.println(res.status_code);
-    }
-    else{
-        response res = sp.start_a_users_playback();
-    }
-
-}
-
-// void resumeCurrentlyPlaying() {
-//     response res = sp.start_a_users_playback();
-// }
-
-void playNextSong() {
-    // Next
-    response res = sp.skip_to_next();
-}
-
-void playPreviousSong() {
-    response res = sp.skip_to_previous();
-}
-
-void setVolume(int volume_level) {
-    response res = sp.set_volume(volume_level);
-}
-
-void seekToPosition(int position_level) {
-    response res = sp.seek_to_position(position_level);
-}
-
-void enableShuffling() {
-    response res = sp.toggle_shuffle(spotify_types::SHUFFLE_ON);
-}
-
-void disableShuffling() {
-    response res = sp.toggle_shuffle(spotify_types::SHUFFLE_OFF);
-}
-
-void disableRepeat() {
-    response res = sp.set_repeat_mode(spotify_types::REPEAT_OFF);
-}
-
-void enableRepeat() {
-    response res = sp.set_repeat_mode(spotify_types::REPEAT_TRACK);
-}
-
-void repeatOne() {
-    response res = sp.set_repeat_mode(spotify_types::REPEAT_CONTEXT);
-}
-
-void getAvailableDevices() {
-Serial.print("Device ID: ");
-Serial.println(sp.current_device_id());
-
-response res = sp.get_available_devices();
-
-print_response(res);
-}
-
-void getAlbumCover() {
-    Serial.println(
-        sp.get_current_album_image_url(0)
-    );
-}
-
-void searchSong(const char* song_name) {
-    response res =
-sp.search_for_item(song_name, "song");
-}
-
-void getUserPlaylists() {
-    response res = sp.get_current_users_playlists();
-    print_response(res);
-}
-
-unsigned long lastUpdate = 0;
 
 void loop() {
+ // Your code here
+ Serial.println();
+    Serial.println("[Spotify] Checking playback...");
 
-    if (millis() - lastUpdate >= 2000)
-    {
-        lastUpdate = millis();
-        getCurrentlyPlaying();
-    }
-    
-    if (play_buttonPressed) {
-        play_buttonPressed = false;
-        pauseCurrentlyPlaying();
-        Serial.println("Button pressed!");
-    }
+    // Force the library to obtain current playback data.
+    String track = sp.current_track_name();
+    String artist = sp.current_artist_names();
+    String track_id = sp.current_track_id();
+    String device_id = sp.current_device_id();
 
-    if (prev_buttonPressed) {
-        prev_buttonPressed = false;
-        playPreviousSong();
-        Serial.println("Button pressed!");
-    }
+    Serial.println();
+    Serial.println("========== NOW PLAYING ==========");
 
-    if (next_buttonPressed) {
-        next_buttonPressed = false;
-        playNextSong();
-        Serial.println("Button pressed!");
+    if (sp.is_playing()) {
+        Serial.println("▶ Playing");
+    } else {
+        Serial.println("⏸ Not playing");
     }
 
+    Serial.print("Artist: ");
+    Serial.println(artist);
 
+    Serial.print("Track: ");
+    Serial.println(track);
+
+    Serial.print("Track ID: ");
+    Serial.println(track_id);
+
+    Serial.print("Device ID: ");
+    Serial.println(device_id);
+
+    Serial.println("=================================");
+
+    delay(5000);
 }
 
