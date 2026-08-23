@@ -3,12 +3,35 @@
 #include "SpotifyEsp32.h"
 #include <time.h>
 
+#if __has_include("secrets.h")
+#include "secrets.h"
+#endif
 
-const char* SSID = "Oasis WiFi 2.4G";
-const char* PASSWORD = "pROMordPorKE1!";
-const char* CLIENT_ID = "09f8277699b4417d94cdf4fe020f7c8d";
-const char* CLIENT_SECRET = "ca8a843f59b94024ac275bec538e09b9";
-const char* REFRESH_TOKEN = "AQDFMlMPczYSZLqpwQT6-73isf4IQpgbuGH5WTSjYomHEtNjL-fJ_7poI-3vbvvdNCyk4wL98xa0sNNQsPUmsPMvyRS453KV9ynVm3X8InpDtbqYnX2R7juG4Nh1OZNkXG0";
+#ifndef WIFI_SSID
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#endif
+
+#ifndef WIFI_PASSWORD
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#endif
+
+#ifndef SPOTIFY_CLIENT_ID
+#define SPOTIFY_CLIENT_ID "YOUR_SPOTIFY_CLIENT_ID"
+#endif
+
+#ifndef SPOTIFY_CLIENT_SECRET
+#define SPOTIFY_CLIENT_SECRET "YOUR_SPOTIFY_CLIENT_SECRET"
+#endif
+
+#ifndef SPOTIFY_REFRESH_TOKEN
+#define SPOTIFY_REFRESH_TOKEN "YOUR_SPOTIFY_REFRESH_TOKEN"
+#endif
+
+const char* SSID = WIFI_SSID;
+const char* PASSWORD = WIFI_PASSWORD;
+const char* CLIENT_ID = SPOTIFY_CLIENT_ID;
+const char* CLIENT_SECRET = SPOTIFY_CLIENT_SECRET;
+const char* REFRESH_TOKEN = SPOTIFY_REFRESH_TOKEN;
 // Create an instance of the Spotify class (optional: specify retry count)
 
 
@@ -79,4 +102,3 @@ void loop() {
 
     delay(5000);
 }
-

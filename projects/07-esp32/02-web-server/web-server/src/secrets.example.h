@@ -1,0 +1,6 @@
+#pragma once
+
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define AP_SSID "YOUR_AP_SSID"
+#define AP_PASSWORD "YOUR_AP_PASSWORD"
