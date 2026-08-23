@@ -4,11 +4,11 @@
 #include <time.h>
 
 
-const char* SSID = "Oasis WiFi 2.4G";
-const char* PASSWORD = "pROMordPorKE1!";
-const char* CLIENT_ID = "09f8277699b4417d94cdf4fe020f7c8d";
-const char* CLIENT_SECRET = "ca8a843f59b94024ac275bec538e09b9";
-const char* REFRESH_TOKEN = "AQDFMlMPczYSZLqpwQT6-73isf4IQpgbuGH5WTSjYomHEtNjL-fJ_7poI-3vbvvdNCyk4wL98xa0sNNQsPUmsPMvyRS453KV9ynVm3X8InpDtbqYnX2R7juG4Nh1OZNkXG0";
+const char* SSID = "";
+const char* PASSWORD = "";
+const char* CLIENT_ID = "";
+const char* CLIENT_SECRET = "";
+const char* REFRESH_TOKEN = "";
 // Create an instance of the Spotify class (optional: specify retry count)
 
 
