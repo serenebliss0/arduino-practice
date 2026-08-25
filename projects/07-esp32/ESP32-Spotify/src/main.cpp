@@ -3,12 +3,35 @@
 #include "SpotifyEsp32.h"
 #include <time.h>
 
+#if __has_include("secrets.h")
+#include "secrets.h"
+#endif
 
-const char* SSID = "";
-const char* PASSWORD = "";
-const char* CLIENT_ID = "";
-const char* CLIENT_SECRET = "";
-const char* REFRESH_TOKEN = "";
+#ifndef WIFI_SSID
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#endif
+
+#ifndef WIFI_PASSWORD
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#endif
+
+#ifndef SPOTIFY_CLIENT_ID
+#define SPOTIFY_CLIENT_ID "YOUR_SPOTIFY_CLIENT_ID"
+#endif
+
+#ifndef SPOTIFY_CLIENT_SECRET
+#define SPOTIFY_CLIENT_SECRET "YOUR_SPOTIFY_CLIENT_SECRET"
+#endif
+
+#ifndef SPOTIFY_REFRESH_TOKEN
+#define SPOTIFY_REFRESH_TOKEN "YOUR_SPOTIFY_REFRESH_TOKEN"
+#endif
+
+const char* SSID = WIFI_SSID;
+const char* PASSWORD = WIFI_PASSWORD;
+const char* CLIENT_ID = SPOTIFY_CLIENT_ID;
+const char* CLIENT_SECRET = SPOTIFY_CLIENT_SECRET;
+const char* REFRESH_TOKEN = SPOTIFY_REFRESH_TOKEN;
 // Create an instance of the Spotify class (optional: specify retry count)
 
 
@@ -79,4 +102,3 @@ void loop() {
 
     delay(5000);
 }
-

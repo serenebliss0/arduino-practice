@@ -96,3 +96,8 @@ coverage/
 info.html
 
 libraries/
+
+# ---------------------------
+# Local secret configuration
+# ---------------------------
+**/secrets.h

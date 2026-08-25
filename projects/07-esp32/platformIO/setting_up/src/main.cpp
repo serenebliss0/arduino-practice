@@ -27,8 +27,28 @@ void loop() {
 
 #include <WiFi.h>
 
-const char* ssid = "WIFINAME";
-const char* password = "psswd";
+#if __has_include("secrets.h")
+#include "secrets.h"
+#endif
+
+#ifndef WIFI_SSID
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#endif
+
+#ifndef WIFI_PASSWORD
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#endif
+
+#ifndef AP_SSID
+#define AP_SSID "ESP32_AP"
+#endif
+
+#ifndef AP_PASSWORD
+#define AP_PASSWORD "CHANGE_ME_123"
+#endif
+
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
 
 void setup() {
   Serial.begin(115200);
@@ -38,7 +58,7 @@ void setup() {
   Serial.println("Connecting to WiFi...");
   WiFi.mode(WIFI_AP_STA);
   WiFi.begin(ssid, password);
-  WiFi.softAP("Serenity's ESP32 may or may not have a virus", "Serenity");
+  WiFi.softAP(AP_SSID, AP_PASSWORD);
   
   // Wait for connection
   while (WiFi.status() != WL_CONNECTED) {
